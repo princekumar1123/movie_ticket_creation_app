@@ -1,0 +1,59 @@
+.mainContainer {
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+}
+
+.containerLeft {
+    width: 50%;
+}
+
+.containerRight {
+    width: 50%;
+}
+
+.innerContainer {
+    border: 2px solid rgb(0, 0, 0);
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+}
+
+.inputBoxWidth {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.mat-mdc-radio-button~.mat-mdc-radio-button {
+    margin-left: 16px;
+}
+
+.button {
+    margin-left: 32%;
+    width: 35%;
+}
+
+h1 {
+    margin-top: 5%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.label {
+    padding-left: 5%;
+}
+
+.errorDiv {
+    margin-left: 5%;
+    color: red;
+    padding-bottom: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

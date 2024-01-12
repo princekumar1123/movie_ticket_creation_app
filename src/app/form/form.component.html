@@ -1,0 +1,74 @@
+<div class="mainContainer">
+    <div class="containerLeft">
+        <div class="innerContainer">
+            <h1>Book a Ticket</h1>
+            <mat-form-field class="inputBoxWidth">
+                <mat-label>Name *</mat-label>
+                <input matInput="nameValu" [(ngModel)]="nameValue">
+            </mat-form-field>
+            <div class="errorDiv">{{nameError}}</div>
+
+            <mat-form-field class="inputBoxWidth">
+                <mat-label>Age *</mat-label>
+                <input matInput="ageValue" type="number" [(ngModel)]="ageValue">
+            </mat-form-field>
+            <div class="errorDiv">{{ageError}}</div>
+
+            <mat-form-field class="inputBoxWidth">
+                <mat-label>Gender *</mat-label>
+                <mat-select [(ngModel)]="genderValue">
+                    <mat-option value="male">Male</mat-option>
+                    <mat-option value="female">Female</mat-option>
+                    <mat-option value="others">Others</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="errorDiv">{{genderError}}</div>
+
+            <mat-form-field class="inputBoxWidth">
+                <mat-label>Choose Your Flim *</mat-label>
+                <mat-select [(ngModel)]="movieValue">
+                    <mat-option value="JOSHEPH">Josheph</mat-option>
+                    <mat-option value="ISSAC">Issac</mat-option>
+                    <mat-option value="ABRAHAM">Abraham</mat-option>
+                    <mat-option value="DAVID">David</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="errorDiv">{{movieError}}</div>
+
+            <mat-form-field class="inputBoxWidth">
+                <mat-label>Number of Ticket *</mat-label>
+                <input matInput="noOfTicketValue" type="number" [(ngModel)]="ticketValue">
+            </mat-form-field>
+            <div class="errorDiv">{{ticketCountError}}</div>
+
+            <mat-form-field class="example-full-width inputBoxWidth">
+                <mat-label>Choose a date *</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="dataValue">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field><br>
+            <div class="errorDiv">{{dateError}}</div>
+
+            <mat-label class="label">Show Time</mat-label><br>
+            <mat-radio-group aria-label="Select an option" class="label" [(ngModel)]="timeValue">
+                <mat-radio-button value="10:30 AM">10:30 AM</mat-radio-button>
+                <mat-radio-button value="03:00 PM">03:00 PM</mat-radio-button>
+                <mat-radio-button value="06:30 PM">06:30 PM</mat-radio-button>
+                <mat-radio-button value="10:30 PM">10:30 PM</mat-radio-button>
+            </mat-radio-group>
+
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="paymentValue">
+                <mat-label class="label">Payment Mode</mat-label>
+                <mat-radio-button value="cash">Cash</mat-radio-button>
+                <mat-radio-button value="card">Card</mat-radio-button>
+            </mat-radio-group>
+
+            <button mat-raised-button color="warn" class="button" (click)="booking()">Book a Ticket</button>
+        </div>
+
+    </div>
+    <div class="containerRight" *ngIf="conditionStatement">
+        <app-ticket [data]="dataObject"></app-ticket>
+    </div>
+</div>
